@@ -22,6 +22,11 @@ export interface User {
     role: UserRole
 }
 
+export interface LoginInputDTO {
+    email: string,
+    password: string
+}
+
 export function stringToUserRole(input: string): UserRole {
     switch (input) {
         case "NORMAL":

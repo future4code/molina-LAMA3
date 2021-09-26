@@ -13,6 +13,7 @@ app.use(cors());
 const userController = new UserController()
 
 app.post("/user/signup", (req, res) => userController.signup(req, res))
+app.post("/user/login", (req, res) => userController.login(req, res))
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

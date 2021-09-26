@@ -29,7 +29,7 @@ export class UserDatabase extends BaseDatabase {
             id: userDB.id,
             name: userDB.name,
             email: userDB.email,
-            passwordHash: userDB.password_hash,
+            passwordHash: userDB.password,
             role: stringToUserRole(userDB.role)
         }
 

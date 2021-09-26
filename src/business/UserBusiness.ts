@@ -62,16 +62,14 @@ export class UserBusiness {
   }
 
   async login(email: string, password: string) {
+
     const user = await this.userDatabase.findUserByEmail(email);
 
     if (!user) {
       throw new Error("Usuário não existe");
     }
 
-    const isPasswordCorrect = await this.hashManager.compare(
-      password,
-      user.passwordHash
-    );
+    const isPasswordCorrect = await this.hashManager.compare(password, user.passwordHash);
 
     if (!isPasswordCorrect) {
       throw new Error("Senha incorreta!");
@@ -81,7 +79,7 @@ export class UserBusiness {
 
     return {
       token: token,
-      user: user,
-    };
+      user: user
+    }
   }
 }

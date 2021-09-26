@@ -33,4 +33,23 @@ export class UserController {
             res.status(500).send(error.message)
         }
     }
+
+    async login(req: Request, res: Response) {
+        try {
+          const email = req.body.email;
+          const password = req.body.password;
+    
+          // Valida as entradas
+          if (!email || !password) {
+            throw new Error("Algum parâmetro faltando");
+          }
+    
+          // Invoca o caso de uso
+          const output = await this.userBusiness.login(email, password);
+    
+          res.send({ token: output.token });
+        } catch (error: any) {
+          res.status(400).send(error.message);
+        }
+      }
 }

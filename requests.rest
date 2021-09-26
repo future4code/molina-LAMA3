@@ -1,0 +1,50 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "Peter",
+    "email": "peterparker@gmail.com",
+    "password": "1234peter",
+    "role": "ADMIN"
+}
+
+###
+# @name login
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "peterparker@gmail.com",
+    "password": "1234peter"
+}
+
+# ###
+
+# # @name getProfile
+
+# http://localhost:3003/users/profile
+# Authorization: {{login.response.body.token}}
+
+# ###
+
+# http://localhost:3003/users/{{getProfile.response.body.id}}/profile
+# Authorization: {{login.response.body.token}}
+
+# ###
+
+# POST http://localhost:3003/recipe
+# Content-Type: application/json
+# Authorization: {{login.response.body.token}}
+
+# {
+#     "title": "HotDogPremium",
+#     "description": "Pão, salsisha, batata palha, maionese, ketchup, mostarda, purê de batata, bacon"
+# }
+
+# ###
+
+# http://localhost:3003/recipe/70dacaa6-0b86-461d-ad6c-c60112cdfca0
+# Authorization: {{login.response.body.token}}
+
+

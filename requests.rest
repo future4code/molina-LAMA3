@@ -1,0 +1,33 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "Peter",
+    "email": "peterparker2@gmail.com",
+    "password": "1234peter",
+    "role": "ADMIN"
+}
+
+###
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "batman@gmail.com",
+    "password": "123456"
+}
+
+###
+
+POST http://localhost:3003/band/create
+Content-Type: application/json
+Authorization: 
+
+{
+    "name": "Suzu Buarque",
+    "music_genre": "MPB",
+    "responsible": "Suzana"
+}
+
+
